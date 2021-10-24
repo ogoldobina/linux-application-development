@@ -1,0 +1,13 @@
+set startup-with-shell off
+
+
+start
+break 31 if i % 5 == 0
+commands
+printf "M=%d, N=%d, S=%d, i=%d\n", M, N, S, i
+continue
+end
+
+tty /dev/null
+run 1 12
+quit

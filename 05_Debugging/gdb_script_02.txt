@@ -1,0 +1,16 @@
+set startup-with-shell off
+set $k = 1
+
+start
+break 31 
+commands
+if $k >= 28 && $k <= 35
+	printf "M=%d, N=%d, S=%d, i=%d\n", M, N, S, i
+end
+set $k++
+continue
+end
+
+tty /dev/null
+run -100 100 3
+quit
